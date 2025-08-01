@@ -1,0 +1,993 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\masocampus\\github\\memo-app\\playwright.config.ts",
+    "rootDir": "C:/Users/masocampus/github/memo-app/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/masocampus/github/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/masocampus/github/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/github/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/masocampus/github/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/github/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/masocampus/github/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "memo-creation.spec.ts",
+      "file": "memo-creation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "새 메모 작성",
+          "file": "memo-creation.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "성공 시나리오 - 새 메모를 성공적으로 작성하고 저장",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30091,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 19
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[90m// 2. \"제목\" 입력란에 \"첫 번째 메모\"를 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'첫 번째 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m     \n \u001b[90m 21 |\u001b[39m     \u001b[90m// 3. \"내용\" 입력란에 \"이것은 첫 번째 메모입니다.\"를 입력\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이것은 첫 번째 메모입니다.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:19:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:17:22.810Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-9ba48688f733bde39b32",
+              "file": "memo-creation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "실패 시나리오 - 제목 미입력",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9474,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:49:49",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                          "column": 49,
+                          "line": 49
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 47 |\u001b[39m     \u001b[90m// 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[90m// (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 49,
+                            "line": 49
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 47 |\u001b[39m     \u001b[90m// 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[90m// (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:49:49\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:17:22.888Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-실패-시나리오---제목-미입력-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                        "column": 49,
+                        "line": 49
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-6dc0289f0f00ddca81c2",
+              "file": "memo-creation.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "실패 시나리오 - 내용 미입력",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30076,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 63
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 61 |\u001b[39m     \n \u001b[90m 62 |\u001b[39m     \u001b[90m// 2. \"제목\"만 입력하고 내용은 비워둠\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'제목만 있는 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m     \n \u001b[90m 65 |\u001b[39m     \u001b[90m// 3. \"저장하기\" 버튼을 클릭\u001b[39m\n \u001b[90m 66 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'저장하기'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:63:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:17:36.584Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-실패-시나리오---내용-미입력-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-d3e77422cc6346d4e4da",
+              "file": "memo-creation.spec.ts",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "취소 시나리오 - 메모 작성을 취소",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30113,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 84
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 82 |\u001b[39m     \n \u001b[90m 83 |\u001b[39m     \u001b[90m// 일부 내용을 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'취소될 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이 메모는 취소됩니다.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m     \n \u001b[90m 87 |\u001b[39m     \u001b[90m// 2. \"취소\" 버튼을 클릭\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:84:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:17:57.332Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-10909e7762a31e184aa7",
+              "file": "memo-creation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "카테고리 선택 테스트",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30707,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 108
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 106 |\u001b[39m     \n \u001b[90m 107 |\u001b[39m     \u001b[90m// 2. 제목과 내용 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 108 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'업무 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 109 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이것은 업무 관련 메모입니다.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 110 |\u001b[39m     \n \u001b[90m 111 |\u001b[39m     \u001b[90m// 3. 카테고리를 \"업무\"로 변경\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:108:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:09.613Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-카테고리-선택-테스트-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-3426c18ee78049484f9b",
+              "file": "memo-creation.spec.ts",
+              "line": 100,
+              "column": 7
+            },
+            {
+              "title": "성공 시나리오 - 새 메모를 성공적으로 작성하고 저장",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30229,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 19
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[90m// 2. \"제목\" 입력란에 \"첫 번째 메모\"를 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'첫 번째 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m     \n \u001b[90m 21 |\u001b[39m     \u001b[90m// 3. \"내용\" 입력란에 \"이것은 첫 번째 메모입니다.\"를 입력\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이것은 첫 번째 메모입니다.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:19:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:30.722Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-0b5ab85cab457442cef1",
+              "file": "memo-creation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "실패 시나리오 - 제목 미입력",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 13958,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:49:49",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                          "column": 49,
+                          "line": 49
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 47 |\u001b[39m     \u001b[90m// 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[90m// (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 49,
+                            "line": 49
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 47 |\u001b[39m     \u001b[90m// 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[90m// (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:49:49\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:53.988Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-실패-시나리오---제목-미입력-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                        "column": 49,
+                        "line": 49
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-c46bd488440ac4ee7bec",
+              "file": "memo-creation.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "실패 시나리오 - 내용 미입력",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30176,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 63
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 61 |\u001b[39m     \n \u001b[90m 62 |\u001b[39m     \u001b[90m// 2. \"제목\"만 입력하고 내용은 비워둠\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'제목만 있는 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m     \n \u001b[90m 65 |\u001b[39m     \u001b[90m// 3. \"저장하기\" 버튼을 클릭\u001b[39m\n \u001b[90m 66 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'저장하기'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:63:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:11.470Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-실패-시나리오---내용-미입력-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-2bf5fb247d75e7aea640",
+              "file": "memo-creation.spec.ts",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "취소 시나리오 - 메모 작성을 취소",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30255,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 84
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 82 |\u001b[39m     \n \u001b[90m 83 |\u001b[39m     \u001b[90m// 일부 내용을 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'취소될 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이 메모는 취소됩니다.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m     \n \u001b[90m 87 |\u001b[39m     \u001b[90m// 2. \"취소\" 버튼을 클릭\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:84:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:14.999Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-0c8058246b7a8446fd1c",
+              "file": "memo-creation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "카테고리 선택 테스트",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30157,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 108
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 106 |\u001b[39m     \n \u001b[90m 107 |\u001b[39m     \u001b[90m// 2. 제목과 내용 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 108 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'업무 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 109 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이것은 업무 관련 메모입니다.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 110 |\u001b[39m     \n \u001b[90m 111 |\u001b[39m     \u001b[90m// 3. 카테고리를 \"업무\"로 변경\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:108:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:47.674Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-카테고리-선택-테스트-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-43adbd85adc0ce92a430",
+              "file": "memo-creation.spec.ts",
+              "line": 100,
+              "column": 7
+            },
+            {
+              "title": "성공 시나리오 - 새 메모를 성공적으로 작성하고 저장",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30076,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 19
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[90m// 2. \"제목\" 입력란에 \"첫 번째 메모\"를 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'첫 번째 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m     \n \u001b[90m 21 |\u001b[39m     \u001b[90m// 3. \"내용\" 입력란에 \"이것은 첫 번째 메모입니다.\"를 입력\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이것은 첫 번째 메모입니다.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:19:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:58.983Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-529c0aa7b1bb5169e08d",
+              "file": "memo-creation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "실패 시나리오 - 제목 미입력",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12093,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:49:49",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                          "column": 49,
+                          "line": 49
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 47 |\u001b[39m     \u001b[90m// 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[90m// (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 49,
+                            "line": 49
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m()\u001b[22m\n\nLocator: getByPlaceholder('제목 *')\nExpected: focused\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 47 |\u001b[39m     \u001b[90m// 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[90m// (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)\u001b[39m\n \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:49:49\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:22.451Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-실패-시나리오---제목-미입력-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                        "column": 49,
+                        "line": 49
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-fe9cfff82d39a2b5c65d",
+              "file": "memo-creation.spec.ts",
+              "line": 34,
+              "column": 7
+            },
+            {
+              "title": "실패 시나리오 - 내용 미입력",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30089,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 63
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 61 |\u001b[39m     \n \u001b[90m 62 |\u001b[39m     \u001b[90m// 2. \"제목\"만 입력하고 내용은 비워둠\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 63 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'제목만 있는 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 64 |\u001b[39m     \n \u001b[90m 65 |\u001b[39m     \u001b[90m// 3. \"저장하기\" 버튼을 클릭\u001b[39m\n \u001b[90m 66 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'저장하기'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:63:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:32.622Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-실패-시나리오---내용-미입력-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-93bb4da4f83122a4f66f",
+              "file": "memo-creation.spec.ts",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "취소 시나리오 - 메모 작성을 취소",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30204,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 84
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 82 |\u001b[39m     \n \u001b[90m 83 |\u001b[39m     \u001b[90m// 일부 내용을 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 84 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'취소될 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 85 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이 메모는 취소됩니다.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 86 |\u001b[39m     \n \u001b[90m 87 |\u001b[39m     \u001b[90m// 2. \"취소\" 버튼을 클릭\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:84:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:36.682Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-e56ede0d1050f06dac08",
+              "file": "memo-creation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "카테고리 선택 테스트",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30093,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts",
+                            "column": 41,
+                            "line": 108
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByPlaceholder('제목 *')\u001b[22m\n\n\n\u001b[0m \u001b[90m 106 |\u001b[39m     \n \u001b[90m 107 |\u001b[39m     \u001b[90m// 2. 제목과 내용 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 108 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'제목 *'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'업무 메모'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 109 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByPlaceholder(\u001b[32m'메모 내용을 마크다운으로 입력하세요...'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'이것은 업무 관련 메모입니다.'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 110 |\u001b[39m     \n \u001b[90m 111 |\u001b[39m     \u001b[90m// 3. 카테고리를 \"업무\"로 변경\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\github\\memo-app\\tests\\memo-creation.spec.ts:108:41\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:21:04.710Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\github\\memo-app\\test-results\\memo-creation-새-메모-작성-카테고리-선택-테스트-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-2732fe31be26235301ad",
+              "file": "memo-creation.spec.ts",
+              "line": 100,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-01T06:17:19.742Z",
+    "duration": 255235.253,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 15,
+    "flaky": 0
+  }
+}

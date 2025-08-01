@@ -15,7 +15,7 @@ interface MemoViewerProps {
   isOpen: boolean
   onClose: () => void
   onEdit: (memo: Memo) => void
-  onDelete: (id: string) => void
+  onDelete: (id: string) => Promise<boolean>
 }
 
 export default function MemoViewer({ memo, isOpen, onClose, onEdit, onDelete }: MemoViewerProps) {
@@ -75,10 +75,14 @@ export default function MemoViewer({ memo, isOpen, onClose, onEdit, onDelete }: 
   }
 
   // 삭제 핸들러
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (memo && window.confirm('정말로 이 메모를 삭제하시겠습니까?')) {
-      onDelete(memo.id)
-      onClose()
+      const success = await onDelete(memo.id)
+      if (success) {
+        onClose()
+      } else {
+        alert('메모 삭제에 실패했습니다.')
+      }
     }
   }
 
