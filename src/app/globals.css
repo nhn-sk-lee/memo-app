@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import '@uiw/react-md-editor/markdown-editor.css';
+@import '@uiw/react-markdown-preview/markdown.css';
 
 :root {
   --background: #ffffff;
@@ -38,4 +40,97 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* MDEditor 커스텀 스타일링 */
+.w-md-editor {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.w-md-editor-text-textarea,
+.w-md-editor-text {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: #374151 !important;
+}
+
+.w-md-editor-text-textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+.w-md-editor .w-md-editor-toolbar {
+  border-bottom: 1px solid #e5e7eb !important;
+  background-color: #f9fafb !important;
+}
+
+.w-md-editor-preview {
+  background-color: transparent !important;
+}
+
+/* 마크다운 프리뷰 스타일링 */
+.wmde-markdown {
+  background-color: transparent !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  color: #374151 !important;
+}
+
+.wmde-markdown h1,
+.wmde-markdown h2,
+.wmde-markdown h3,
+.wmde-markdown h4,
+.wmde-markdown h5,
+.wmde-markdown h6 {
+  color: #111827 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.wmde-markdown p {
+  margin-bottom: 1em !important;
+}
+
+.wmde-markdown pre {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+}
+
+.wmde-markdown code {
+  background-color: #f3f4f6 !important;
+  color: #dc2626 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+}
+
+.wmde-markdown blockquote {
+  border-left: 4px solid #3b82f6 !important;
+  background-color: #eff6ff !important;
+  padding: 0.5rem 1rem !important;
+  margin: 1rem 0 !important;
+}
+
+.wmde-markdown ul,
+.wmde-markdown ol {
+  padding-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.wmde-markdown table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin: 1rem 0 !important;
+}
+
+.wmde-markdown th,
+.wmde-markdown td {
+  border: 1px solid #e5e7eb !important;
+  padding: 0.5rem !important;
+  text-align: left !important;
+}
+
+.wmde-markdown th {
+  background-color: #f9fafb !important;
+  font-weight: 600 !important;
 }
