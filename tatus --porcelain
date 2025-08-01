@@ -1,0 +1,58 @@
+warning: in the working copy of 'src/components/MemoList.tsx', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/src/components/MemoList.tsx b/src/components/MemoList.tsx[m
+[1mindex abfecd0..1a4e5a8 100644[m
+[1m--- a/src/components/MemoList.tsx[m
+[1m+++ b/src/components/MemoList.tsx[m
+[36m@@ -1,7 +1,9 @@[m
+ 'use client'[m
+ [m
+[32m+[m[32mimport { useState } from 'react'[m
+ import { Memo, MEMO_CATEGORIES, DEFAULT_CATEGORIES } from '@/types/memo'[m
+ import MemoItem from './MemoItem'[m
+[32m+[m[32mimport MemoViewer from './MemoViewer'[m
+ [m
+ interface MemoListProps {[m
+   memos: Memo[][m
+[36m@@ -30,6 +32,21 @@[m [mexport default function MemoList({[m
+   onDeleteMemo,[m
+   stats,[m
+ }: MemoListProps) {[m
+[32m+[m[32m  // 모달 상태 관리[m
+[32m+[m[32m  const [selectedMemo, setSelectedMemo] = useState<Memo | null>(null)[m
+[32m+[m[32m  const [isViewerOpen, setIsViewerOpen] = useState(false)[m
+[32m+[m
+[32m+[m[32m  // 메모 상세 보기 핸들러[m
+[32m+[m[32m  const handleViewMemo = (memo: Memo) => {[m
+[32m+[m[32m    setSelectedMemo(memo)[m
+[32m+[m[32m    setIsViewerOpen(true)[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  // 모달 닫기 핸들러[m
+[32m+[m[32m  const handleCloseViewer = () => {[m
+[32m+[m[32m    setIsViewerOpen(false)[m
+[32m+[m[32m    setSelectedMemo(null)[m
+[32m+[m[32m  }[m
+   if (loading) {[m
+     return ([m
+       <div className="flex items-center justify-center py-12">[m
+[36m@@ -153,10 +170,20 @@[m [mexport default function MemoList({[m
+               memo={memo}[m
+               onEdit={onEditMemo}[m
+               onDelete={onDeleteMemo}[m
+[32m+[m[32m              onView={handleViewMemo}[m
+             />[m
+           ))}[m
+         </div>[m
+       )}[m
+[32m+[m
+[32m+[m[32m      {/* 메모 상세 보기 모달 */}[m
+[32m+[m[32m      <MemoViewer[m
+[32m+[m[32m        memo={selectedMemo}[m
+[32m+[m[32m        isOpen={isViewerOpen}[m
+[32m+[m[32m        onClose={handleCloseViewer}[m
+[32m+[m[32m        onEdit={onEditMemo}[m
+[32m+[m[32m        onDelete={onDeleteMemo}[m
+[32m+[m[32m      />[m
+     </div>[m
+   )[m
+ }[m
