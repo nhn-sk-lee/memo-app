@@ -5,7 +5,7 @@ import { Memo, MEMO_CATEGORIES } from '@/types/memo'
 interface MemoItemProps {
   memo: Memo
   onEdit: (memo: Memo) => void
-  onDelete: (id: string) => void
+  onDelete: (id: string) => Promise<boolean>
   onView: (memo: Memo) => void
 }
 
@@ -81,10 +81,13 @@ export default function MemoItem({ memo, onEdit, onDelete, onView }: MemoItemPro
             </svg>
           </button>
           <button
-            onClick={(e) => {
+            onClick={async (e) => {
               e.stopPropagation()
               if (window.confirm('정말로 이 메모를 삭제하시겠습니까?')) {
-                onDelete(memo.id)
+                const success = await onDelete(memo.id)
+                if (!success) {
+                  alert('메모 삭제에 실패했습니다.')
+                }
               }
             }}
             className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"

@@ -1,0 +1,452 @@
+<testsuites id="" name="" tests="15" failures="15" skipped="0" errors="0" time="255.235253">
+<testsuite name="memo-creation.spec.ts" timestamp="2025-08-01T06:17:20.041Z" hostname="chromium" tests="5" failures="5" skipped="0" time="130.461" errors="0">
+<testcase name="새 메모 작성 › 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장" classname="memo-creation.spec.ts" time="30.091">
+<failure message="memo-creation.spec.ts:11:7 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장" type="FAILURE">
+<![CDATA[  [chromium] › memo-creation.spec.ts:11:7 › 새 메모 작성 › 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장 ────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      17 |     
+      18 |     // 2. "제목" 입력란에 "첫 번째 메모"를 입력
+    > 19 |     await page.getByPlaceholder('제목 *').fill('첫 번째 메모');
+         |                                         ^
+      20 |     
+      21 |     // 3. "내용" 입력란에 "이것은 첫 번째 메모입니다."를 입력
+      22 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이것은 첫 번째 메모입니다.');
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:19:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 실패 시나리오 - 제목 미입력" classname="memo-creation.spec.ts" time="9.474">
+<failure message="memo-creation.spec.ts:34:7 실패 시나리오 - 제목 미입력" type="FAILURE">
+<![CDATA[  [chromium] › memo-creation.spec.ts:34:7 › 새 메모 작성 › 실패 시나리오 - 제목 미입력 ─────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeFocused()
+
+    Locator: getByPlaceholder('제목 *')
+    Expected: focused
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeFocused" with timeout 5000ms
+      - waiting for getByPlaceholder('제목 *')
+
+
+      47 |     // 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인
+      48 |     // (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)
+    > 49 |     await expect(page.getByPlaceholder('제목 *')).toBeFocused();
+         |                                                 ^
+      50 |     
+      51 |     // 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)
+      52 |     await expect(page.getByText('새 메모 작성')).toBeVisible();
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:49:49
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-실패-시나리오---제목-미입력-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-실패-시나리오---제목-미입력-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 실패 시나리오 - 내용 미입력" classname="memo-creation.spec.ts" time="30.076">
+<failure message="memo-creation.spec.ts:55:7 실패 시나리오 - 내용 미입력" type="FAILURE">
+<![CDATA[  [chromium] › memo-creation.spec.ts:55:7 › 새 메모 작성 › 실패 시나리오 - 내용 미입력 ─────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      61 |     
+      62 |     // 2. "제목"만 입력하고 내용은 비워둠
+    > 63 |     await page.getByPlaceholder('제목 *').fill('제목만 있는 메모');
+         |                                         ^
+      64 |     
+      65 |     // 3. "저장하기" 버튼을 클릭
+      66 |     await page.getByRole('button', { name: '저장하기' }).click();
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:63:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-실패-시나리오---내용-미입력-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-실패-시나리오---내용-미입력-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 취소 시나리오 - 메모 작성을 취소" classname="memo-creation.spec.ts" time="30.113">
+<failure message="memo-creation.spec.ts:76:7 취소 시나리오 - 메모 작성을 취소" type="FAILURE">
+<![CDATA[  [chromium] › memo-creation.spec.ts:76:7 › 새 메모 작성 › 취소 시나리오 - 메모 작성을 취소 ──────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      82 |     
+      83 |     // 일부 내용을 입력
+    > 84 |     await page.getByPlaceholder('제목 *').fill('취소될 메모');
+         |                                         ^
+      85 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이 메모는 취소됩니다.');
+      86 |     
+      87 |     // 2. "취소" 버튼을 클릭
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:84:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 카테고리 선택 테스트" classname="memo-creation.spec.ts" time="30.707">
+<failure message="memo-creation.spec.ts:100:7 카테고리 선택 테스트" type="FAILURE">
+<![CDATA[  [chromium] › memo-creation.spec.ts:100:7 › 새 메모 작성 › 카테고리 선택 테스트 ─────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      106 |     
+      107 |     // 2. 제목과 내용 입력
+    > 108 |     await page.getByPlaceholder('제목 *').fill('업무 메모');
+          |                                         ^
+      109 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이것은 업무 관련 메모입니다.');
+      110 |     
+      111 |     // 3. 카테고리를 "업무"로 변경
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:108:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-카테고리-선택-테스트-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-카테고리-선택-테스트-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="memo-creation.spec.ts" timestamp="2025-08-01T06:17:20.041Z" hostname="firefox" tests="5" failures="5" skipped="0" time="134.775" errors="0">
+<testcase name="새 메모 작성 › 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장" classname="memo-creation.spec.ts" time="30.229">
+<failure message="memo-creation.spec.ts:11:7 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장" type="FAILURE">
+<![CDATA[  [firefox] › memo-creation.spec.ts:11:7 › 새 메모 작성 › 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장 ─────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      17 |     
+      18 |     // 2. "제목" 입력란에 "첫 번째 메모"를 입력
+    > 19 |     await page.getByPlaceholder('제목 *').fill('첫 번째 메모');
+         |                                         ^
+      20 |     
+      21 |     // 3. "내용" 입력란에 "이것은 첫 번째 메모입니다."를 입력
+      22 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이것은 첫 번째 메모입니다.');
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:19:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 실패 시나리오 - 제목 미입력" classname="memo-creation.spec.ts" time="13.958">
+<failure message="memo-creation.spec.ts:34:7 실패 시나리오 - 제목 미입력" type="FAILURE">
+<![CDATA[  [firefox] › memo-creation.spec.ts:34:7 › 새 메모 작성 › 실패 시나리오 - 제목 미입력 ──────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeFocused()
+
+    Locator: getByPlaceholder('제목 *')
+    Expected: focused
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeFocused" with timeout 5000ms
+      - waiting for getByPlaceholder('제목 *')
+
+
+      47 |     // 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인
+      48 |     // (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)
+    > 49 |     await expect(page.getByPlaceholder('제목 *')).toBeFocused();
+         |                                                 ^
+      50 |     
+      51 |     // 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)
+      52 |     await expect(page.getByText('새 메모 작성')).toBeVisible();
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:49:49
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-실패-시나리오---제목-미입력-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-실패-시나리오---제목-미입력-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 실패 시나리오 - 내용 미입력" classname="memo-creation.spec.ts" time="30.176">
+<failure message="memo-creation.spec.ts:55:7 실패 시나리오 - 내용 미입력" type="FAILURE">
+<![CDATA[  [firefox] › memo-creation.spec.ts:55:7 › 새 메모 작성 › 실패 시나리오 - 내용 미입력 ──────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      61 |     
+      62 |     // 2. "제목"만 입력하고 내용은 비워둠
+    > 63 |     await page.getByPlaceholder('제목 *').fill('제목만 있는 메모');
+         |                                         ^
+      64 |     
+      65 |     // 3. "저장하기" 버튼을 클릭
+      66 |     await page.getByRole('button', { name: '저장하기' }).click();
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:63:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-실패-시나리오---내용-미입력-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-실패-시나리오---내용-미입력-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 취소 시나리오 - 메모 작성을 취소" classname="memo-creation.spec.ts" time="30.255">
+<failure message="memo-creation.spec.ts:76:7 취소 시나리오 - 메모 작성을 취소" type="FAILURE">
+<![CDATA[  [firefox] › memo-creation.spec.ts:76:7 › 새 메모 작성 › 취소 시나리오 - 메모 작성을 취소 ───────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      82 |     
+      83 |     // 일부 내용을 입력
+    > 84 |     await page.getByPlaceholder('제목 *').fill('취소될 메모');
+         |                                         ^
+      85 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이 메모는 취소됩니다.');
+      86 |     
+      87 |     // 2. "취소" 버튼을 클릭
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:84:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 카테고리 선택 테스트" classname="memo-creation.spec.ts" time="30.157">
+<failure message="memo-creation.spec.ts:100:7 카테고리 선택 테스트" type="FAILURE">
+<![CDATA[  [firefox] › memo-creation.spec.ts:100:7 › 새 메모 작성 › 카테고리 선택 테스트 ──────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      106 |     
+      107 |     // 2. 제목과 내용 입력
+    > 108 |     await page.getByPlaceholder('제목 *').fill('업무 메모');
+          |                                         ^
+      109 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이것은 업무 관련 메모입니다.');
+      110 |     
+      111 |     // 3. 카테고리를 "업무"로 변경
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:108:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-카테고리-선택-테스트-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-카테고리-선택-테스트-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="memo-creation.spec.ts" timestamp="2025-08-01T06:17:20.041Z" hostname="webkit" tests="5" failures="5" skipped="0" time="132.555" errors="0">
+<testcase name="새 메모 작성 › 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장" classname="memo-creation.spec.ts" time="30.076">
+<failure message="memo-creation.spec.ts:11:7 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장" type="FAILURE">
+<![CDATA[  [webkit] › memo-creation.spec.ts:11:7 › 새 메모 작성 › 성공 시나리오 - 새 메모를 성공적으로 작성하고 저장 ──────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      17 |     
+      18 |     // 2. "제목" 입력란에 "첫 번째 메모"를 입력
+    > 19 |     await page.getByPlaceholder('제목 *').fill('첫 번째 메모');
+         |                                         ^
+      20 |     
+      21 |     // 3. "내용" 입력란에 "이것은 첫 번째 메모입니다."를 입력
+      22 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이것은 첫 번째 메모입니다.');
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:19:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-성공-시나리오---새-메모를-성공적으로-작성하고-저장-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 실패 시나리오 - 제목 미입력" classname="memo-creation.spec.ts" time="12.093">
+<failure message="memo-creation.spec.ts:34:7 실패 시나리오 - 제목 미입력" type="FAILURE">
+<![CDATA[  [webkit] › memo-creation.spec.ts:34:7 › 새 메모 작성 › 실패 시나리오 - 제목 미입력 ───────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).toBeFocused()
+
+    Locator: getByPlaceholder('제목 *')
+    Expected: focused
+    Received: <element(s) not found>
+    Call log:
+      - Expect "toBeFocused" with timeout 5000ms
+      - waiting for getByPlaceholder('제목 *')
+
+
+      47 |     // 4. 제목이 필수라는 내용의 오류 메시지가 표시되는지 확인
+      48 |     // (실제 구현에 따라 오류 메시지 확인 방법이 달라질 수 있음)
+    > 49 |     await expect(page.getByPlaceholder('제목 *')).toBeFocused();
+         |                                                 ^
+      50 |     
+      51 |     // 폼이 여전히 열려있는지 확인 (저장이 실패했으므로)
+      52 |     await expect(page.getByText('새 메모 작성')).toBeVisible();
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:49:49
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-실패-시나리오---제목-미입력-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-실패-시나리오---제목-미입력-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 실패 시나리오 - 내용 미입력" classname="memo-creation.spec.ts" time="30.089">
+<failure message="memo-creation.spec.ts:55:7 실패 시나리오 - 내용 미입력" type="FAILURE">
+<![CDATA[  [webkit] › memo-creation.spec.ts:55:7 › 새 메모 작성 › 실패 시나리오 - 내용 미입력 ───────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      61 |     
+      62 |     // 2. "제목"만 입력하고 내용은 비워둠
+    > 63 |     await page.getByPlaceholder('제목 *').fill('제목만 있는 메모');
+         |                                         ^
+      64 |     
+      65 |     // 3. "저장하기" 버튼을 클릭
+      66 |     await page.getByRole('button', { name: '저장하기' }).click();
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:63:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-실패-시나리오---내용-미입력-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-실패-시나리오---내용-미입력-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 취소 시나리오 - 메모 작성을 취소" classname="memo-creation.spec.ts" time="30.204">
+<failure message="memo-creation.spec.ts:76:7 취소 시나리오 - 메모 작성을 취소" type="FAILURE">
+<![CDATA[  [webkit] › memo-creation.spec.ts:76:7 › 새 메모 작성 › 취소 시나리오 - 메모 작성을 취소 ────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      82 |     
+      83 |     // 일부 내용을 입력
+    > 84 |     await page.getByPlaceholder('제목 *').fill('취소될 메모');
+         |                                         ^
+      85 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이 메모는 취소됩니다.');
+      86 |     
+      87 |     // 2. "취소" 버튼을 클릭
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:84:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-취소-시나리오---메모-작성을-취소-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="새 메모 작성 › 카테고리 선택 테스트" classname="memo-creation.spec.ts" time="30.093">
+<failure message="memo-creation.spec.ts:100:7 카테고리 선택 테스트" type="FAILURE">
+<![CDATA[  [webkit] › memo-creation.spec.ts:100:7 › 새 메모 작성 › 카테고리 선택 테스트 ───────────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByPlaceholder('제목 *')
+
+
+      106 |     
+      107 |     // 2. 제목과 내용 입력
+    > 108 |     await page.getByPlaceholder('제목 *').fill('업무 메모');
+          |                                         ^
+      109 |     await page.getByPlaceholder('메모 내용을 마크다운으로 입력하세요...').fill('이것은 업무 관련 메모입니다.');
+      110 |     
+      111 |     // 3. 카테고리를 "업무"로 변경
+        at C:\Users\masocampus\github\memo-app\tests\memo-creation.spec.ts:108:41
+
+    Error Context: ..\test-results\memo-creation-새-메모-작성-카테고리-선택-테스트-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|memo-creation-새-메모-작성-카테고리-선택-테스트-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

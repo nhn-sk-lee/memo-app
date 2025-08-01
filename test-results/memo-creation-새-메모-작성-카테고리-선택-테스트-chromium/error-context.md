@@ -1,0 +1,123 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - heading "📝 메모 앱" [level=1]
+  - button "새 메모":
+    - img
+    - text: 새 메모
+- main:
+  - img
+  - textbox "메모 검색..."
+  - combobox:
+    - option "전체 카테고리" [selected]
+    - option "개인 (1)"
+    - option "업무 (1)"
+    - option "학습 (0)"
+    - option "아이디어 (0)"
+    - option "기타 (0)"
+  - text: 총 2개의 메모
+  - heading "첫 번째 Supabase 메모" [level=3]
+  - text: 개인 Invalid Date
+  - button "편집":
+    - img
+  - button "삭제":
+    - img
+  - paragraph: 이것은 Supabase로 마이그레이션된 첫 번째 메모입니다!
+  - text: "#테스트 #supabase"
+  - heading "프로젝트 계획" [level=3]
+  - text: 업무 Invalid Date
+  - button "편집":
+    - img
+  - button "삭제":
+    - img
+  - paragraph: "## 메모 앱 개선 계획\\n\\n- [x] Supabase 연동\\n- [ ] 실시간 동기화\\n- [ ] 다크모드 추가"
+  - text: "#계획 #개발"
+- heading "새 메모 작성" [level=2]
+- button:
+  - img
+- text: 제목 *
+- textbox "제목 *"
+- text: 카테고리
+- combobox "카테고리":
+  - option "개인" [selected]
+  - option "업무"
+  - option "학습"
+  - option "아이디어"
+  - option "기타"
+- text: 내용 *
+- list:
+  - listitem:
+    - button "Add bold text (ctrl + b)":
+      - img
+  - listitem:
+    - button "Add italic text (ctrl + i)":
+      - img
+  - listitem:
+    - button "Add strikethrough text (ctrl + shift + x)":
+      - img
+  - listitem:
+    - button "Insert HR (ctrl + h)":
+      - img
+  - listitem:
+    - button "Insert title":
+      - img
+  - listitem
+  - listitem:
+    - button "Add a link (ctrl + l)":
+      - img
+  - listitem:
+    - button "Insert a quote (ctrl + q)":
+      - img
+  - listitem:
+    - button "Insert code (ctrl + j)":
+      - img
+  - listitem:
+    - button "Insert Code Block (ctrl + shift + j)":
+      - img
+  - listitem:
+    - button "Insert comment (ctrl + /)":
+      - img
+  - listitem:
+    - button "Add image (ctrl + k)":
+      - img
+  - listitem:
+    - button "Add table":
+      - img
+  - listitem
+  - listitem:
+    - button "Add unordered list (ctrl + shift + u)":
+      - img
+  - listitem:
+    - button "Add ordered list (ctrl + shift + o)":
+      - img
+  - listitem:
+    - button "Add checked list (ctrl + shift + c)":
+      - img
+  - listitem
+  - listitem:
+    - button "Open help":
+      - img
+- list:
+  - listitem:
+    - button "Edit code (ctrl + 7)":
+      - img
+  - listitem:
+    - button "Live code (ctrl + 8)":
+      - img
+  - listitem:
+    - button "Preview code (ctrl + 9)":
+      - img
+  - listitem
+  - listitem:
+    - button "Toggle fullscreen (ctrl + 0)":
+      - img
+- textbox "메모 내용을 마크다운으로 입력하세요..."
+- img
+- text: 태그
+- textbox "태그를 입력하고 Enter를 누르세요"
+- button "추가"
+- button "취소"
+- button "저장하기"
+- alert
+```
